@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  hiwkaw-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hiwkaw_tu_rangsit
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - NODE_ENV=production
+    restart: unless-stopped
+    volumes:
+      # ให้ข้อมูลสถานะร้านอาหารบันทึกเก็บไว้ได้แม้ restart container
+      - ./server/data:/app/server/data

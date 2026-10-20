@@ -1,0 +1,33 @@
+{
+  "name": "hiwkaw-tu-rangsit",
+  "version": "1.0.0",
+  "description": "HiwKaw - ระบบตรวจสอบสถานะเปิด/ปิดร้านอาหาร มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต (กรีนแคนทีน และ คณะวิทยาศาสตร์)",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "node server/index.js",
+    "client": "npm --prefix client run dev",
+    "dev": "node run-dev.js",
+    "build:client": "npm --prefix client install && npm --prefix client run build",
+    "build": "npm run build:client",
+    "docker:build": "docker build -t hiwkaw-app .",
+    "docker:run": "docker run -p 5000:5000 hiwkaw-app"
+  },
+  "keywords": [
+    "thammasat",
+    "canteen",
+    "food-court",
+    "realtime-status",
+    "tu-rangsit"
+  ],
+  "author": "CS261 Team - HiwKaw",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
